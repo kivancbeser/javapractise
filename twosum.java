@@ -1,5 +1,5 @@
-Two Sum - Leet Code
-https://leetcode.com/problems/two-sum/
+//Two Sum - Leet Code
+//https://leetcode.com/problems/two-sum/
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
