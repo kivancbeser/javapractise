@@ -1,3 +1,15 @@
+//Sort and use binary search
+// Java code below
+import java.util.*;
+
+class A {
+    static boolean exists(int[] ints, int k) {
+		Arrays.sort(ints);
+        return Arrays.binarySearch(ints, k) >= 0;    
+	}
+}
+
+
 // Java code below
 import java.util.*;
 
