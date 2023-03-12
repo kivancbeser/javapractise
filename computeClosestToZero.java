@@ -1,26 +1,43 @@
-public static int computeClosestToZero(int[] numbers) {
-    if (numbers == null || numbers.length == 0) {
-        throw new IllegalArgumentException("Array cannot be null or empty");
-    }
-    int closest = numbers[0];
-    for (int i = 1; i < numbers.length; i++) {
-        int current = numbers[i];
-        if (Math.abs(current) < Math.abs(closest)) {
-            closest = current;
-        } else if (Math.abs(current) == Math.abs(closest) && current > 0) {
-            closest = current;
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+class Solution {
+
+    public static int computeClosestToZero(int[] ts) {
+        // Write your code here
+        // To debug: System.err.println("Debug messages...");
+
+        if(ts.length == 0){
+            return 0;
         }
+        int closest = ts[0];
+        if(ts.length>= 0 && ts.length <= 10000){
+            for (int i = 1; i < ts.length; i++) {
+                int current = ts[i];
+                if (Math.abs(current) < Math.abs(closest)) {
+                    closest = current;
+                } else if (Math.abs(current) == Math.abs(closest) && current > 0) {
+                    closest = current;
+                }
+            }
+        }
+        return closest;
     }
-    return closest;
+
+    /* Ignore and do not change the code below */
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] ts = new int[n];
+        for (int i = 0; i < n; i++) {
+            ts[i] = in.nextInt();
+        }
+        PrintStream outStream = System.out;
+        System.setOut(System.err);
+        int solution = computeClosestToZero(ts);
+        System.setOut(outStream);
+        System.out.println(solution);
+    }
+    /* Ignore and do not change the code above */
 }
-/*
-The function takes an array of integers as input and throws an IllegalArgumentException if the input array is null or empty. It then initializes a variable closest with the first element of the array.
-
-The function then iterates over the remaining elements of the array and compares the absolute value of each element to the absolute value of the closest variable. If the absolute value of the current element is smaller than the absolute value of closest, then closest is updated to the current element. If the absolute values of the current element and closest are equal, then closest is updated to the current element only if the current element is positive.
-
-Finally, the function returns the closest variable, which will hold the integer closest to zero in the input array.*/
-
-
-
-
-
